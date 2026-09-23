@@ -2,11 +2,11 @@
 
 # SendRepute for PrestaShop
 
-Install `dist/sendrepute-prestashop-0.1.0.zip` in **Modules > Module Manager > Upload a module**, then configure **SendRepute mail classification**.
+Install `dist/sendrepute-prestashop-0.1.1.zip` in **Modules > Module Manager > Upload a module**, then configure **SendRepute mail classification**.
 
 ## Compatibility and real mail contract
 
-Version 0.1.0 intentionally supports PrestaShop **9.0.0, 9.0.1, 9.0.2, and 9.0.3 only** (PHP 8.1 through 8.4). PrestaShop 8 uses SwiftMailer and is not supported. Any other patch must be added to this exact tested list before it is claimed as supported.
+Version 0.1.1 intentionally supports PrestaShop **9.0.0, 9.0.1, 9.0.2, and 9.0.3 only** (PHP 8.1 through 8.4). PrestaShop 8 uses SwiftMailer and is not supported. Any other patch must be added to this exact tested list before it is claimed as supported.
 
 The early `actionEmailSendBefore` hook contains unrendered variables. This module uses it only to match an exact opted-in template. Classification occurs at `actionMailAlterMessageBeforeSend`, where PrestaShop 9 has already substituted variables into a Symfony `Email` and installed subject, text, HTML, recipients, sender, and attachments. The original message object is never rebuilt, so recipients, headers, attachments, embedded parts, and provider/transport state remain intact.
 
